@@ -48,18 +48,18 @@ void addScore(ScoreOBJ *scoreObj, int team)
     rollbackScore(scoreObj);
 }
 
-void rollbackScore(ScoreOBJ *scoreObj){
+void rollbackScore(ScoreOBJ *scoreObj)
+{
 
-     switch (scoreObj->game)
+    switch (scoreObj->game)
     {
     case 1:
-            scoreObj->value = 2;
-            break;
+        scoreObj->value = 2;
+        break;
     case 3:
         scoreObj->value = 1;
-            break;
+        break;
     }
-
 }
 
 void subScore(ScoreOBJ *scoreObj, int team)
@@ -123,6 +123,7 @@ void endGame(ScoreOBJ *scoreObj)
     {
         scoreObj->endGame = true;
         scoreObj->hasChanged = true;
+        restart(scoreObj);
     }
 };
 
