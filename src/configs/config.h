@@ -11,7 +11,8 @@ struct Config
   const int STCP_SCORE2_pin = 10;       // clock
   const int SHCP_SCORE2_pin = 11;       // rck
   const int IR_pin = 3;                 // RL Receiver pin
-  const String versao = "Versão 0.0.3"; // project version
-  const bool display_on = false;        // active display
+  const int BLINCK_pin = 12;            // blinck led
+  const String versao = "Versão 0.0.4"; // project version
+  const bool display_on = true;        // active display
 };
 #endif //!__CONFIG__H__

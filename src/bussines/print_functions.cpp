@@ -15,11 +15,10 @@ int seven_seg_digits[10][4] = {
 };
 const Config config;
 
-byte display_1 = 0;
-byte display_2 = 0;
-
 void printValues(ScoreOBJ *scoreObj)
 {
+    byte display_1 = 0;
+    byte display_2 = 0;
     Serial.println("Atualização de placar");
     Serial.println("Valor Score 1");
     Serial.println(scoreObj->score1);
@@ -45,6 +44,16 @@ void printValues(ScoreOBJ *scoreObj)
         Serial.println(display_2, BIN);
     }
 }
+void blinkLed()
+{
+    Serial.println("Led acionado");
+    if (config.display_on)
+    {
+        digitalWrite(config.BLINCK_pin, HIGH);
+        delay(100);
+        digitalWrite(config.BLINCK_pin, LOW);
+    }
+}
 
 void popularBits(byte *display, int score)
 {
@@ -60,13 +69,17 @@ void popularBits(byte *display, int score)
     {
         v2 = score;
     }
+    Serial.println("valor v1");
+    Serial.println(v1);
+    Serial.println("valor v2");
+    Serial.println(v2);
     for (size_t i = 0; i < 8; i++)
     {
-        bitWrite(*display, i, seven_seg_digits[v1][cont]);
+        bitWrite(*display, i, seven_seg_digits[v2][cont]);
         if (cont == 0)
         {
             cont = 4;
-            v1 = v2;
+            v2 = v1;
         }
         cont--;
     }

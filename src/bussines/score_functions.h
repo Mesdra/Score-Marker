@@ -3,7 +3,7 @@
 #include <Arduino.h>
 #include "model/scoreObj.h"
 
-void changeGameMode(ScoreOBJ *scoreObj);
+void changeGameMode(ScoreOBJ *scoreObj, int gamemode);
 void addScore(ScoreOBJ *scoreObj, int team);
 void subScore(ScoreOBJ *scoreObj, int team);
 void changeValue(ScoreOBJ *scoreObj);

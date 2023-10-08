@@ -6,5 +6,6 @@
 void printValues(ScoreOBJ *scoreObj);
 void popularBits(byte *display, int score);
 void updateSiftRegister(byte enviarBits, int stcp, int ds, int shcp);
+void blinkLed();
 
 #endif //!__PRINT_FUNCTIONS__H__

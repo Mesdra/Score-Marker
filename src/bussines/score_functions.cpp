@@ -1,32 +1,31 @@
 #include "score_functions.h"
 
-void changeGameMode(ScoreOBJ *scoreObj)
+void changeGameMode(ScoreOBJ *scoreObj, int gamemode)
 {
-    Serial.println("Moda de jogo Alterado");
-    if (scoreObj->game == 3)
-    {
-        scoreObj->game = 0;
-    }
-    int gameMode = scoreObj->game + 1;
-    Serial.println(gameMode);
-    switch (gameMode)
+    Serial.println("Modo de jogo Alterado");
+   
+    Serial.println(gamemode);
+    switch (gamemode)
     {
     case 1 /* basketball */:
+        Serial.println("basketball");
         scoreObj->value = 2;
         scoreObj->endGameScore = 15;
         break;
     case 2 /* volleyball */:
+        Serial.println("volleyball");
         scoreObj->value = 1;
         scoreObj->endGameScore = 15;
         break;
     case 3 /* trick */:
+        Serial.println("trick");
         scoreObj->value = 1;
         scoreObj->endGameScore = 12;
         break;
     }
     scoreObj->score1 = 0;
     scoreObj->score2 = 0;
-    scoreObj->game = gameMode;
+    scoreObj->game = gamemode;
     scoreObj->endGame = false;
     scoreObj->hasChanged = true;
 };
