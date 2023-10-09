@@ -21,9 +21,11 @@ void setup()
   pinMode(config.DS_SCORE1_pin, OUTPUT);
   pinMode(config.STCP_SCORE1_pin, OUTPUT);
   pinMode(config.SHCP_SCORE1_pin, OUTPUT);
+
   pinMode(config.DS_SCORE2_pin, OUTPUT);
   pinMode(config.STCP_SCORE2_pin, OUTPUT);
   pinMode(config.SHCP_SCORE2_pin, OUTPUT);
+  
   pinMode(config.BLINCK_pin, OUTPUT);
   Serial.println(config.versao);
 }

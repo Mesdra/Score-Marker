@@ -4,7 +4,9 @@
 #include "model/scoreObj.h"
 
 void printValues(ScoreOBJ *scoreObj);
-void popularBits(byte *display, int score);
+void popularBitsScore1(byte *display, int score);
+void popular(int desena,int sentena,byte *display);
+void popularBitsScore2(byte *display, int score);
 void updateSiftRegister(byte enviarBits, int stcp, int ds, int shcp);
 void blinkLed();
 

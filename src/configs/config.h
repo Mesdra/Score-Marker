@@ -3,7 +3,7 @@
 #include <Arduino.h>
 struct Config
 {
-  const int tDelay = 1000;              // defalt time delay
+  const int tDelay = 600;              // defalt time delay
   const int DS_SCORE1_pin = 6;          // data pin
   const int STCP_SCORE1_pin = 7;        // clock
   const int SHCP_SCORE1_pin = 8;        // rck
