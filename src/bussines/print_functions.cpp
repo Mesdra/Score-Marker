@@ -80,7 +80,6 @@ void popularBitsScore1(byte *display, int score)
 
 void popularBitsScore2(byte *display, int score)
 {
-    int cont = 3;
     int v1 = 0;
     int v2 = 0;
     if (score >= 10)

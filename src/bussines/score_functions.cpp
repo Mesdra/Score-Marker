@@ -3,7 +3,7 @@
 void changeGameMode(ScoreOBJ *scoreObj, int gamemode)
 {
     Serial.println("Modo de jogo Alterado");
-   
+
     Serial.println(gamemode);
     switch (gamemode)
     {
@@ -33,6 +33,10 @@ void changeGameMode(ScoreOBJ *scoreObj, int gamemode)
 void addScore(ScoreOBJ *scoreObj, int team)
 {
 
+    Serial.println("value Add score ");
+    Serial.println(scoreObj->value);
+    Serial.println("score ");
+    Serial.println(scoreObj->score1);
     if (team == 1)
     {
         scoreObj->score1 = scoreObj->score1 + scoreObj->value;
@@ -43,6 +47,8 @@ void addScore(ScoreOBJ *scoreObj, int team)
         scoreObj->score2 = scoreObj->score2 + scoreObj->value;
         scoreObj->hasChanged = true;
     }
+    Serial.println("score ");
+    Serial.println(scoreObj->score1);
 
     rollbackScore(scoreObj);
 }
@@ -79,7 +85,6 @@ void subScore(ScoreOBJ *scoreObj, int team)
 }
 void changeValue(ScoreOBJ *scoreObj)
 {
-
     switch (scoreObj->game)
     {
     case 1:
@@ -92,6 +97,7 @@ void changeValue(ScoreOBJ *scoreObj)
             scoreObj->value = 2;
         }
         scoreObj->hasChanged = true;
+        break;
     case 3:
         if (scoreObj->value == 1)
         {
@@ -114,6 +120,7 @@ void changeValue(ScoreOBJ *scoreObj)
             scoreObj->value = 1;
         }
         scoreObj->hasChanged = true;
+        break;
     }
 }
 void endGame(ScoreOBJ *scoreObj)
